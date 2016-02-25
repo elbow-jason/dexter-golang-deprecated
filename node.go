@@ -1,5 +1,7 @@
 package main
 
+// Node is a type that has an ID and edges that
+// are indexed by values between 0 and 255
 type Node struct {
 	Edges []*Edge
 	ID    int
@@ -23,18 +25,4 @@ func (node *Node) hasEdge(edge Edge) bool {
 
 func (node *Node) addEdge(edge *Edge) {
 	node.Edges[edge.Value] = edge
-}
-
-var count int = 0
-
-func countNext() int {
-	count = count + 1
-	return count
-}
-
-func newNode() Node {
-	return Node{
-		ID:    countNext(),
-		Edges: newEmptyEdges(),
-	}
 }

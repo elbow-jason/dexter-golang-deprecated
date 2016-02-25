@@ -1,6 +1,7 @@
 package main
 
-// Edge .
+// Edge has a byte and points to the next node
+// in the graph/FST.
 type Edge struct {
 	Value byte
 	Next  *Node

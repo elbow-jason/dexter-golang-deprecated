@@ -4,6 +4,7 @@ import (
 	"errors"
 )
 
+// FST - A finite state transducer that holds a searchable graph
 type FST struct {
 	Start   *Node
 	Finish  *Node
@@ -37,6 +38,7 @@ func (fst *FST) AddString(word string) {
 	outterEdge.Next = fst.Finish
 }
 
+// Search for strings within an FST's graphs
 func (fst *FST) Search(word string) error {
 	var (
 		edge *Edge
@@ -54,7 +56,7 @@ func (fst *FST) Search(word string) error {
 }
 
 func stringToEdges(word string) []*Edge {
-	edges := make([]*Edge, 0)
+	var edges []*Edge
 	for _, value := range []byte(word) {
 		edges = append(edges, &Edge{Value: value})
 	}

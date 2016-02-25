@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	// "log"
 )
 
+// Search for a string inside an FST
 func Search(fst FST, str string) {
 	if err := fst.Search(str); err != nil {
 		fmt.Printf("%s: %q\n", err, str)
