@@ -5,7 +5,7 @@ import (
 )
 
 func TestNewFstIsInitialized(t *testing.T) {
-	fst := newFST()
+	fst := NewFST()
 	if fst.Start == nil {
 		t.Fatal("A new FST should not have a nil Start.")
 	}
@@ -18,7 +18,7 @@ func TestNewFstIsInitialized(t *testing.T) {
 }
 
 func TestFstNodeState(t *testing.T) {
-	fst := newFST()
+	fst := NewFST()
 	if fst.Start.ID != 0 {
 		t.Fatalf("Expected Start node's ID to be 0. Got %d", fst.Start.ID)
 	}
@@ -28,7 +28,7 @@ func TestFstNodeState(t *testing.T) {
 }
 
 func TestFSTSearching(t *testing.T) {
-	fst := newFST()
+	fst := NewFST()
 	fst.AddString("mouse")
 
 	if err := fst.Search("mouse"); err != nil {

@@ -13,7 +13,7 @@ type FST struct {
 
 var errNotFound = errors.New("Not Found")
 
-func newFST() FST {
+func NewFST() FST {
 	fst := FST{}
 	fst.initialize()
 	return fst
