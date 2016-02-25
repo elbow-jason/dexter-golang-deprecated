@@ -1,4 +1,4 @@
-package main
+package dexter
 
 import (
 	"errors"
@@ -64,8 +64,9 @@ func stringToEdges(word string) []*Edge {
 }
 
 func (fst *FST) nextID() int {
+	id := fst.counter
 	fst.counter = fst.counter + 1
-	return fst.counter
+	return id
 }
 
 func (fst *FST) newNode() Node {
@@ -78,7 +79,6 @@ func (fst *FST) newNode() Node {
 func (fst *FST) initialize() {
 	start := fst.newNode()
 	finish := fst.newNode()
-	fst.counter = 0
 	fst.Start = &start
 	fst.Finish = &finish
 }

@@ -1,4 +1,4 @@
-package main
+package dexter
 
 // Edge has a byte and points to the next node
 // in the graph/FST.

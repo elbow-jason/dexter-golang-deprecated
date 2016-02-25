@@ -1,4 +1,4 @@
-package main
+package dexter
 
 // Node is a type that has an ID and edges that
 // are indexed by values between 0 and 255
