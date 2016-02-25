@@ -11,7 +11,7 @@ func (edge *Edge) addNode(node *Node) {
 	edge.Next = node
 }
 
-func (edge *Edge) nextNode(fst *FST) *Node {
+func (edge *Edge) getOrCreateNode(fst *FST) *Node {
 	if edge.Next == nil {
 		node := fst.newNode()
 		edge.addNode(&node)

@@ -32,7 +32,7 @@ func (fst *FST) AddString(word string) {
 		} else {
 			edge = node.getEdge(edge.Value)
 		}
-		node = edge.nextNode(fst)
+		node = edge.getOrCreateNode(fst)
 		outterEdge = edge
 	}
 	outterEdge.Next = fst.Finish
@@ -47,7 +47,7 @@ func (fst *FST) Search(word string) error {
 	for _, value := range []byte(word) {
 		if node.hasValue(value) {
 			edge = node.Edges[value]
-			node = edge.nextNode(fst)
+			node = edge.getOrCreateNode(fst)
 		} else {
 			return errNotFound
 		}
